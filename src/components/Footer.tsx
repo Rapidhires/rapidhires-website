@@ -6,16 +6,16 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#07090A] text-steel-400 border-t border-[#1E252C]">
       {/* Upper Operational & Legal Disclaimer Banner */}
-      <div className="bg-[#101417] border-b border-[#1E252C] py-4 px-4 sm:px-6 lg:px-8 text-xs font-mono">
+      <div className="bg-[#101417] border-b border-[#1E252C] py-3.5 px-4 sm:px-6 lg:px-8 text-xs font-sans antialiased">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3 text-steel-400">
           <div className="flex items-start md:items-center gap-2.5">
-            <span className="w-1.5 h-1.5 bg-vermilion shrink-0 mt-1 md:mt-0"></span>
-            <p className="font-sans leading-relaxed text-[11px] text-steel-300">
-              <strong className="text-white font-mono uppercase tracking-wider">Regulatory Notice:</strong> Rapidhire is an international industrial workforce recruitment solutions business registered in India. We are <span className="text-white font-semibold">not an immigration consultancy</span> or visa advisory firm. All cross-border placements are conducted strictly according to employer sponsor criteria and destination country legal frameworks.
+            <span className="w-2 h-2 rounded-full bg-vermilion shrink-0 mt-1 md:mt-0"></span>
+            <p className="font-sans leading-relaxed text-xs text-steel-300">
+              <strong className="text-white font-medium">Regulatory Notice:</strong> Rapidhire is an international industrial workforce recruitment solutions business registered in India. We are <span className="text-white font-medium">not an immigration consultancy</span> or visa advisory firm. All cross-border placements are conducted strictly according to employer sponsor criteria and destination country legal frameworks.
             </p>
           </div>
-          <div className="shrink-0 text-steel-500 font-mono text-[10px] uppercase tracking-wider">
-            MCA Statutory Registration: Republic of India
+          <div className="shrink-0 text-steel-400 font-sans text-xs font-medium">
+            India registered Enterprise
           </div>
         </div>
       </div>

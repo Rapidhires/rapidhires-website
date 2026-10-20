@@ -98,20 +98,20 @@ export const JapanBridgePage: React.FC = () => {
          ======================================================== */}
       <header className="sticky top-0 z-50 bg-[#172C3C] text-white border-b border-[#2A4154] shadow-sm">
         {/* Top utility strip */}
-        <div className="bg-[#0F1E2A] text-steel-400 text-[11px] py-1 px-4 sm:px-6 lg:px-8 border-b border-[#1D3244] font-mono tracking-tight">
+        <div className="bg-[#0F1E2A] text-steel-400 text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-[#1D3244] font-sans antialiased">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 text-steel-200">
-                <span className="w-1.5 h-1.5 bg-[#C45238] inline-block"></span>
-                <span>{lang === 'ja' ? '日印産業人材連携デスク ｜ 株式会社Rapidhire' : 'INDIA–JAPAN INDUSTRIAL WORKFORCE COLLABORATION DESK'}</span>
+              <span className="inline-flex items-center gap-2 text-steel-200 font-medium">
+                <span className="w-2 h-2 rounded-full bg-[#C45238] inline-block shadow-sm shadow-[#C45238]/50"></span>
+                <span>{lang === 'ja' ? '日印産業人材連携デスク ｜ India registered Enterprise' : 'India registered Enterprise ｜ Japan Collaboration Desk'}</span>
               </span>
               <span className="hidden md:inline text-steel-600">|</span>
-              <span className="hidden md:inline text-steel-400">
+              <span className="hidden md:inline text-steel-400 font-normal">
                 {lang === 'ja' ? '浜松・静岡・東海地域および全国の製造業・技術企業の皆様へ' : 'Focus on Hamamatsu, Shizuoka & Japanese Manufacturing Centers'}
               </span>
             </div>
-            <div className="flex items-center gap-3">
-              <Link to="/" className="text-steel-400 hover:text-white transition-colors text-[10px] uppercase font-mono">
+            <div className="flex items-center gap-3 font-sans">
+              <Link to="/" className="text-steel-400 hover:text-white transition-colors text-xs font-medium">
                 &larr; {content.nav.backToMain}
               </Link>
             </div>
@@ -685,7 +685,7 @@ export const JapanBridgePage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
             <div className="p-6 bg-[#F7F7F3] border border-steel-300 space-y-2">
-              <span className="text-[10px] font-mono uppercase text-[#C45238] font-bold block">[MCA REGISTERED]</span>
+              <span className="text-[10px] font-sans uppercase text-[#C45238] font-bold block">[INDIA REGISTERED ENTERPRISE]</span>
               <h3 className="text-sm font-bold text-[#172C3C]">{content.trust.item1Title}</h3>
               <p className="text-xs text-graphite-600 leading-relaxed font-sans">{content.trust.item1Desc}</p>
             </div>

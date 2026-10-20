@@ -488,8 +488,8 @@ export const JAPAN_CONTENT_JA: JapanBridgeContent = {
   trust: {
     eyebrow: '信頼性の裏付けと公的実績',
     heading: '誠実な採用実務と、確認可能な実績に根ざして。',
-    item1Title: 'インド法人としての正規登録',
-    item1Desc: 'インド会社法（MCA）に基づき適法に設立された人材ソリューション企業として、透明性の高い事業運営を行っています。',
+    item1Title: 'インド法人としての正規登録（India Registered Enterprise）',
+    item1Desc: 'インド登記法人（India Registered Enterprise）として適法に設立された人材ソリューション企業として、透明性の高い事業運営を行っています。',
     item2Title: 'T-Hub RubriXプログラム HR部門選出',
     item2Desc: 'インド有数のイノベーション拠点T-HubのRubriXプログラムにおいて、約240社の応募企業の中からHR・採用革新部門の優秀企業として選出。',
     item3Title: 'テランガナ州政府との人材育成イニシアチブ連携',
