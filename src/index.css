@@ -9,7 +9,7 @@
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Calibri', 'Carlito', 'Candara', 'Segoe UI', -apple-system, 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif;
     color: #171D21;
     background-color: #F4F4F0;
     -webkit-font-smoothing: antialiased;

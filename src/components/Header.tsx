@@ -32,6 +32,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEmployerModal, onOpenCandi
     { label: 'Methodology & Standards', path: '/approach' },
     { label: 'Enterprise Profile', path: '/about' },
     { label: 'Contact', path: '/contact' },
+    { label: 'Japan Bridge (日印協業)', path: '/japan' },
   ];
 
   const isActive = (path: string) => {
@@ -85,18 +86,24 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEmployerModal, onOpenCandi
           <nav className="hidden xl:flex items-center space-x-1" aria-label="Main Navigation">
             {navLinks.map((link) => {
               const active = isActive(link.path);
+              const isJapan = link.path === '/japan';
               return (
                 <Link
                   key={link.path}
                   to={link.path}
                   className={`px-3 py-2 text-xs font-mono uppercase tracking-wider transition-colors relative ${
-                    active
-                      ? 'text-white font-semibold'
-                      : 'text-steel-400 hover:text-white'
+                    isJapan
+                      ? 'text-[#E58872] hover:text-white font-semibold border border-[#C45238]/40 bg-[#C45238]/10'
+                      : active
+                        ? 'text-white font-semibold'
+                        : 'text-steel-400 hover:text-white'
                   }`}
                 >
-                  <span>{link.label}</span>
-                  {active && (
+                  <span className="flex items-center gap-1.5">
+                    {isJapan && <span className="w-1.5 h-1.5 bg-[#C45238] inline-block animate-pulse"></span>}
+                    <span>{link.label}</span>
+                  </span>
+                  {active && !isJapan && (
                     <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-vermilion"></span>
                   )}
                 </Link>
@@ -150,17 +157,27 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEmployerModal, onOpenCandi
             </p>
             {navLinks.map((link) => {
               const active = isActive(link.path);
+              const isJapan = link.path === '/japan';
               return (
                 <Link
                   key={link.path}
                   to={link.path}
                   className={`block px-3 py-2 text-sm uppercase transition-colors border-l-2 ${
-                    active
-                      ? 'border-vermilion bg-castiron-800 text-white font-bold'
-                      : 'border-transparent text-steel-400 hover:text-white hover:bg-castiron-900'
+                    isJapan
+                      ? 'border-[#C45238] bg-[#C45238]/15 text-[#E58872] font-bold'
+                      : active
+                        ? 'border-vermilion bg-castiron-800 text-white font-bold'
+                        : 'border-transparent text-steel-400 hover:text-white hover:bg-castiron-900'
                   }`}
                 >
-                  {link.label}
+                  <span className="flex items-center justify-between">
+                    <span>{link.label}</span>
+                    {isJapan && (
+                      <span className="text-[10px] text-white bg-[#C45238] px-1.5 py-0.5">
+                        PILOT
+                      </span>
+                    )}
+                  </span>
                 </Link>
               );
             })}

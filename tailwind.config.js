@@ -40,7 +40,7 @@ export default {
           light: '#FBECE7',
           border: '#B83B13',
         },
-        // Legacy alias backward compatibility
+        // Legacy aliases
         navy: {
           DEFAULT: '#101417',
           900: '#0B0E10',
@@ -71,8 +71,10 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        sans: ['Calibri', 'Carlito', 'Candara', 'Segoe UI', '-apple-system', 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', 'sans-serif'],
+        calibri: ['Calibri', 'Carlito', 'Candara', 'Segoe UI', '-apple-system', 'sans-serif'],
         mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace'],
+        jp: ['Noto Sans JP', 'Calibri', 'Carlito', 'Hiragino Sans', 'Meiryo', 'sans-serif'],
       },
       letterSpacing: {
         tighter: '-0.035em',
@@ -88,7 +90,7 @@ export default {
         lg: '0px',
         xl: '0px',
         '2xl': '0px',
-        full: '9999px', // allowed for small circular status dots only
+        full: '9999px',
       }
     },
   },

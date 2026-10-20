@@ -362,6 +362,211 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* ========================================================
+          DEDICATED SECTION: IT & SOFTWARE ENGINEERING (EUROPE ONLY)
+         ======================================================== */}
+      <section className="py-20 bg-[#121920] text-white border-b border-[#232F3A] relative overflow-hidden">
+        {/* Subtle grid backdrop */}
+        <div className="absolute inset-0 blueprint-grid-dark pointer-events-none opacity-30"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          {/* Section Header */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 pb-6 border-b border-[#232F3A] gap-6">
+            <div className="space-y-3 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1A2530] border border-[#2F4154] text-[#E58872] text-[11px] font-mono uppercase tracking-eyebrow">
+                <span className="w-1.5 h-1.5 bg-vermilion"></span>
+                <span>EUROPEAN INDUSTRIAL DEPLOYMENTS ONLY &bull; EU BLUE CARD FAST-TRACK</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
+                IT &amp; Software Engineering for European Industry
+              </h2>
+              <p className="text-sm text-steel-300 leading-relaxed font-sans">
+                Dedicated engineering recruitment exclusively serving European automotive OEMs, Tier-1 industrial suppliers, and smart manufacturing plants in Germany, Poland, the Netherlands, and Central Europe. Sourcing senior embedded, cloud IoT, MES, and robotics software engineers qualified under European statutory visa regulations.
+              </p>
+            </div>
+
+            <div className="bg-[#1A2530] border border-[#2F4154] p-4 text-xs font-mono space-y-1.5 shrink-0 max-w-xs">
+              <div className="text-white font-bold uppercase tracking-wider flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-vermilion" />
+                <span>EU Blue Card Compliant</span>
+              </div>
+              <p className="text-[11px] text-steel-400">
+                Accredited Bachelor/Master degrees recognized via Anabin / ZAB. Meets German &amp; EU shortage occupation salary thresholds.
+              </p>
+            </div>
+          </div>
+
+          {/* 4 Specialized Disciplines Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            
+            {/* Card 1: Embedded AUTOSAR */}
+            <div className="bg-[#17222C] border border-[#263748] p-6 flex flex-col justify-between hover:border-steel-400 transition-all">
+              <div>
+                <div className="flex items-center justify-between text-[10px] font-mono text-steel-400 mb-3 border-b border-[#263748] pb-2">
+                  <span className="text-vermilion font-bold">[DISCIPLINE EU-01]</span>
+                  <span>GERMANY / POLAND</span>
+                </div>
+                <h3 className="text-base font-bold text-white mb-2">
+                  Embedded Systems &amp; AUTOSAR
+                </h3>
+                <p className="text-xs text-steel-300 leading-relaxed mb-4 font-sans">
+                  Firmware engineers specializing in automotive ECUs, microcontroller programming, CAN/LIN/Ethernet protocols, and ISO 26262 functional safety.
+                </p>
+                <div className="space-y-1 text-[11px] font-mono text-steel-400 pt-3 border-t border-[#263748]">
+                  <div>&bull; Classic &amp; Adaptive AUTOSAR</div>
+                  <div>&bull; Embedded C / C++ / RTOS</div>
+                  <div>&bull; Vector CANoe &amp; CANalyzer</div>
+                  <div>&bull; ISO 26262 ASIL-B to D</div>
+                </div>
+              </div>
+              <div className="pt-5 mt-5 border-t border-[#263748] flex items-center justify-between font-mono">
+                <span className="text-[10px] text-steel-400 uppercase">Target: Tier-1 Auto</span>
+                <button
+                  onClick={() => onOpenEmployerModal('Embedded Systems & AUTOSAR Firmware Engineer')}
+                  className="text-xs text-vermilion hover:underline font-bold"
+                >
+                  Enquire &rarr;
+                </button>
+              </div>
+            </div>
+
+            {/* Card 2: Industrial Cloud & DevOps */}
+            <div className="bg-[#17222C] border border-[#263748] p-6 flex flex-col justify-between hover:border-steel-400 transition-all">
+              <div>
+                <div className="flex items-center justify-between text-[10px] font-mono text-steel-400 mb-3 border-b border-[#263748] pb-2">
+                  <span className="text-vermilion font-bold">[DISCIPLINE EU-02]</span>
+                  <span>GERMANY / NETHERLANDS</span>
+                </div>
+                <h3 className="text-base font-bold text-white mb-2">
+                  Industrial Cloud &amp; DevOps
+                </h3>
+                <p className="text-xs text-steel-300 leading-relaxed mb-4 font-sans">
+                  Infrastructure and cloud specialists designing secure IoT ingestion backends, microservices, containerization, and high-availability factory platforms.
+                </p>
+                <div className="space-y-1 text-[11px] font-mono text-steel-400 pt-3 border-t border-[#263748]">
+                  <div>&bull; Kubernetes &amp; Docker Orchestration</div>
+                  <div>&bull; Terraform &amp; CI/CD Pipelines</div>
+                  <div>&bull; MQTT / Apache Kafka Telemetry</div>
+                  <div>&bull; GDPR &amp; IEC 62443 Security</div>
+                </div>
+              </div>
+              <div className="pt-5 mt-5 border-t border-[#263748] flex items-center justify-between font-mono">
+                <span className="text-[10px] text-steel-400 uppercase">Target: Smart Factory</span>
+                <button
+                  onClick={() => onOpenEmployerModal('Cloud Infrastructure & DevOps Engineer')}
+                  className="text-xs text-vermilion hover:underline font-bold"
+                >
+                  Enquire &rarr;
+                </button>
+              </div>
+            </div>
+
+            {/* Card 3: Industrial Full-Stack & MES */}
+            <div className="bg-[#17222C] border border-[#263748] p-6 flex flex-col justify-between hover:border-steel-400 transition-all">
+              <div>
+                <div className="flex items-center justify-between text-[10px] font-mono text-steel-400 mb-3 border-b border-[#263748] pb-2">
+                  <span className="text-vermilion font-bold">[DISCIPLINE EU-03]</span>
+                  <span>CENTRAL EUROPE</span>
+                </div>
+                <h3 className="text-base font-bold text-white mb-2">
+                  Full-Stack &amp; Smart Factory MES
+                </h3>
+                <p className="text-xs text-steel-300 leading-relaxed mb-4 font-sans">
+                  Software engineers bridging enterprise ERPs, shop-floor SCADA, and operator dashboards using open standards and modern reactive web stacks.
+                </p>
+                <div className="space-y-1 text-[11px] font-mono text-steel-400 pt-3 border-t border-[#263748]">
+                  <div>&bull; OPC UA &amp; Modbus Data Bridges</div>
+                  <div>&bull; C# / .NET Core &amp; Python Services</div>
+                  <div>&bull; React / TypeScript Dashboards</div>
+                  <div>&bull; Real-Time Plant OEE Telemetry</div>
+                </div>
+              </div>
+              <div className="pt-5 mt-5 border-t border-[#263748] flex items-center justify-between font-mono">
+                <span className="text-[10px] text-steel-400 uppercase">Target: Industry 4.0</span>
+                <button
+                  onClick={() => onOpenEmployerModal('Industrial Full-Stack & MES Software Engineer')}
+                  className="text-xs text-vermilion hover:underline font-bold"
+                >
+                  Enquire &rarr;
+                </button>
+              </div>
+            </div>
+
+            {/* Card 4: Robotics Software & Motion Control */}
+            <div className="bg-[#17222C] border border-[#263748] p-6 flex flex-col justify-between hover:border-steel-400 transition-all">
+              <div>
+                <div className="flex items-center justify-between text-[10px] font-mono text-steel-400 mb-3 border-b border-[#263748] pb-2">
+                  <span className="text-vermilion font-bold">[DISCIPLINE EU-04]</span>
+                  <span>GERMANY / FRANCE</span>
+                </div>
+                <h3 className="text-base font-bold text-white mb-2">
+                  Robotics Software &amp; Motion
+                </h3>
+                <p className="text-xs text-steel-300 leading-relaxed mb-4 font-sans">
+                  Autonomy and motion control developers building autonomous mobile robots (AMRs), industrial robot arm kinematics, and vision-guided inspection.
+                </p>
+                <div className="space-y-1 text-[11px] font-mono text-steel-400 pt-3 border-t border-[#263748]">
+                  <div>&bull; ROS / ROS 2 &amp; Modern C++ (17/20)</div>
+                  <div>&bull; 2D/3D LiDAR SLAM &amp; Nav2</div>
+                  <div>&bull; OpenCV &amp; Deep Learning Vision</div>
+                  <div>&bull; Industrial AGV / AMR Fleet Systems</div>
+                </div>
+              </div>
+              <div className="pt-5 mt-5 border-t border-[#263748] flex items-center justify-between font-mono">
+                <span className="text-[10px] text-steel-400 uppercase">Target: Robotics / AGV</span>
+                <button
+                  onClick={() => onOpenEmployerModal('Robotics Software & Motion Control Engineer')}
+                  className="text-xs text-vermilion hover:underline font-bold"
+                >
+                  Enquire &rarr;
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Verification Protocol & Live Vacancies Strip */}
+          <div className="bg-[#17222C] border border-[#263748] p-6 lg:p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <div className="lg:col-span-8 space-y-3">
+                <div className="flex items-center gap-2 text-xs font-mono text-vermilion uppercase font-bold">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span>Verified European IT Deployment Standards</span>
+                </div>
+                <p className="text-xs sm:text-sm text-steel-300 leading-relaxed font-sans">
+                  Every software engineer candidate undergoes rigorous recruiter-led code screening, live systems design evaluations, Anabin degree recognition verification, and English fluency certification (C1/B2). German language training (A1/A2 Goethe-Institut benchmark) is actively supported prior to relocation.
+                </p>
+                <div className="flex flex-wrap gap-4 text-xs font-mono text-steel-400 pt-1">
+                  <span>&bull; Direct Employer Sponsor Contracts</span>
+                  <span>&bull; Zero Placement Fees Charged to Candidates</span>
+                  <span>&bull; Fast-Track EU Blue Card Processing</span>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 font-mono">
+                <button
+                  onClick={() => onOpenEmployerModal('IT & Software Engineering (Europe Only)')}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-vermilion hover:bg-vermilion-hover text-white text-xs font-semibold px-5 py-3.5 transition-colors border border-vermilion-border shadow-sm uppercase tracking-wider"
+                >
+                  <span>Submit European IT Brief</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+                <Link
+                  to="/categories"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#1A2530] hover:bg-[#232F3A] text-steel-200 text-xs font-semibold px-5 py-3.5 border border-[#2F4154] transition-colors uppercase tracking-wider text-center"
+                >
+                  <span>Browse European IT Index</span>
+                </Link>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================================
           SECTION 3: EMPLOYER VALUE PROPOSITION (Sourcing Capabilities)
          ======================================================== */}
       <section className="py-20 bg-white border-b border-steel-300">
@@ -427,6 +632,105 @@ export const HomePage: React.FC<HomePageProps> = ({
             >
               <span>Review Complete Recruiter-Led Methodology &rarr;</span>
             </Link>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================================
+          FLAGSHIP SPOTLIGHT: RAPIDHIRE JAPAN BRIDGE (INDIA–JAPAN)
+         ======================================================== */}
+      <section className="py-20 bg-[#F4F4EE] border-b border-steel-300 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          <div className="bg-white border-2 border-[#C45238] shadow-md p-8 sm:p-12 relative overflow-hidden">
+            
+            {/* Top Badge Strip */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-steel-200 pb-4 mb-8">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2.5 h-2.5 bg-[#C45238] inline-block"></span>
+                <span className="text-xs font-mono uppercase tracking-wider font-bold text-[#C45238]">
+                  SPECIAL INITIATIVE &bull; INDIA–JAPAN WORKFORCE COLLABORATION
+                </span>
+              </div>
+              <div className="text-xs font-mono text-graphite-500 uppercase tracking-wider">
+                浜松・静岡および日本の製造業・技術企業の皆様へ
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              {/* Left Column: Proposition */}
+              <div className="lg:col-span-7 space-y-5">
+                <div className="space-y-2">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#172C3C] tracking-tight leading-tight">
+                    Rapidhire Japan Bridge
+                  </h2>
+                  <p className="text-base sm:text-lg font-bold text-[#C45238]">
+                    Connecting India's skilled talent with Japan's industrial ambitions.
+                  </p>
+                  <p className="text-xs sm:text-sm font-medium text-graphite-600 font-sans">
+                    インドの技術・ものづくり人材と日本の産業基盤を結ぶ、実務型パートナーシップ
+                  </p>
+                </div>
+
+                <p className="text-sm text-graphite-700 leading-relaxed font-sans">
+                  Japan's precision manufacturing centers—including Hamamatsu and Shizuoka's world-renowned automotive, transport equipment, and mechatronics clusters—face acute technical shortages. Rapidhire Japan Bridge offers a structured, transparent recruitment and co-training framework designed specifically for Japanese corporate norms.
+                </p>
+
+                {/* 3 Pillars Preview */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs font-mono">
+                  <div className="bg-[#FAF9F5] p-3 border border-steel-300">
+                    <span className="text-[#C45238] font-bold block mb-1">01. Co-Design Model</span>
+                    <span className="text-graphite-700 text-[11px] leading-snug block">
+                      Rapidhire, employer &amp; training partners share clear responsibilities.
+                    </span>
+                  </div>
+                  <div className="bg-[#FAF9F5] p-3 border border-steel-300">
+                    <span className="text-[#C45238] font-bold block mb-1">02. 4-Stage Pilot</span>
+                    <span className="text-graphite-700 text-[11px] leading-snug block">
+                      Discover &rarr; Design &rarr; Test &rarr; Evaluate with clear success metrics.
+                    </span>
+                  </div>
+                  <div className="bg-[#FAF9F5] p-3 border border-steel-300">
+                    <span className="text-[#C45238] font-bold block mb-1">03. Cultural Integration</span>
+                    <span className="text-graphite-700 text-[11px] leading-snug block">
+                      Japanese work ethics, 5S culture, and dedicated post-arrival welfare desk.
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: CTA & Bilingual Callout */}
+              <div className="lg:col-span-5 bg-[#172C3C] text-white p-6 sm:p-8 border border-[#233C50] space-y-6">
+                <div>
+                  <div className="flex items-center justify-between text-[11px] font-mono text-[#E58872] uppercase mb-2 border-b border-[#2A4154] pb-2">
+                    <span>MICROSITE PORTAL</span>
+                    <span>日本語 / ENGLISH</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">
+                    Explore the Japan Bridge Microsite
+                  </h3>
+                  <p className="text-xs text-steel-300 leading-relaxed font-sans">
+                    Detailed breakdowns of our Hamamatsu regional fit, technical disciplines (automotive, electronics, precision machining, railway maintenance), pilot pathway, and confidential inquiry form.
+                  </p>
+                </div>
+
+                <div className="pt-2 space-y-3 font-mono">
+                  <Link
+                    to="/japan"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#C45238] hover:bg-[#A83D25] text-white text-xs font-bold uppercase tracking-wider px-6 py-4 transition-colors shadow-sm text-center"
+                  >
+                    <span>Enter Japan Bridge Microsite &rarr;</span>
+                  </Link>
+                  <p className="text-[10px] text-steel-400 text-center">
+                    完全バイリンガル対応（日本語 / 英語） ｜ 守秘義務厳守
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
           </div>
 
         </div>

@@ -98,6 +98,12 @@ export const Footer: React.FC = () => {
                   Browse Occupations Directory
                 </Link>
               </li>
+              <li>
+                <Link to="/japan" className="text-[#E58872] hover:text-white transition-colors font-medium flex items-center gap-1.5 pt-1 border-t border-[#1E252C]">
+                  <span className="w-1.5 h-1.5 bg-[#C45238] inline-block"></span>
+                  <span>Japan Bridge (日印協業)</span>
+                </Link>
+              </li>
             </ul>
           </div>
 

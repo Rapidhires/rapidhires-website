@@ -23,7 +23,8 @@ export const CategoriesPage: React.FC<CategoriesPageProps> = ({
     'Manufacturing',
     'Skilled Trades',
     'Maintenance & Technical',
-    'Industrial & Project'
+    'Industrial & Project',
+    'IT & Software (Europe Only)'
   ];
 
   const filteredOccupations = useMemo(() => {

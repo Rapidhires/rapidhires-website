@@ -1,7 +1,7 @@
 export interface Occupation {
   id: string;
   title: string;
-  category: 'Engineering' | 'Manufacturing' | 'Skilled Trades' | 'Maintenance & Technical' | 'Industrial & Project';
+  category: 'Engineering' | 'Manufacturing' | 'Skilled Trades' | 'Maintenance & Technical' | 'Industrial & Project' | 'IT & Software (Europe Only)';
   industry: string;
   experienceLevel: 'Junior (1-3 yrs)' | 'Mid-Level (3-7 yrs)' | 'Senior (7-12 yrs)' | 'Lead / Specialist (12+ yrs)';
   qualificationLevel: 'ITI / Trade Diploma' | 'Polytechnic Diploma' | 'Bachelor of Engineering (B.E./B.Tech)' | 'Master of Engineering / M.Tech' | 'Vocational Certification';
@@ -11,9 +11,92 @@ export interface Occupation {
   relatedRoles: string[];
   activeSourcing: boolean;
   statusNote: string;
+  regionRestriction?: string;
 }
 
 export const OCCUPATIONS: Occupation[] = [
+  // IT & Software (Europe Only)
+  {
+    id: 'it-embedded-autosar',
+    title: 'Embedded Systems & AUTOSAR Firmware Engineer',
+    category: 'IT & Software (Europe Only)',
+    industry: 'Automotive & Industrial IoT (Europe)',
+    experienceLevel: 'Mid-Level (3-7 yrs)',
+    qualificationLevel: 'Bachelor of Engineering (B.E./B.Tech)',
+    responsibilities: [
+      'Develop, configure, and integrate AUTOSAR Classic/Adaptive ECU software stacks.',
+      'Write low-level firmware in Embedded C/C++ for ARM Cortex-M/R microcontrollers and CAN/LIN/Ethernet protocols.',
+      'Implement functional safety standards in accordance with ISO 26262 (ASIL B/D).',
+      'Conduct hardware-in-the-loop (HIL) testing using Vector CANoe, dSPACE, and logic analyzers.'
+    ],
+    skills: ['Embedded C', 'Modern C++', 'AUTOSAR Classic/Adaptive', 'CAN / CAN-FD / LIN', 'Vector CANoe', 'ISO 26262', 'RTOS (FreeRTOS/QNX)'],
+    qualifications: ['B.Tech / M.Tech in Electronics, Computer Engineering, or Electrical Engineering', 'Eligible for EU Blue Card fast-track visa processing', 'Professional English (B2/C1 minimum)'],
+    relatedRoles: ['Firmware Engineer', 'Automotive Software Engineer', 'IoT Hardware Engineer'],
+    activeSourcing: true,
+    statusNote: 'Europe-exclusive sourcing channel for automotive tier-1 and industrial automation clients in Germany and Central Europe.',
+    regionRestriction: 'European Union Only (Germany, Netherlands, Poland, France, Czech Republic)'
+  },
+  {
+    id: 'it-cloud-devops-eu',
+    title: 'Cloud Infrastructure & DevOps Engineer (Industrial Platforms)',
+    category: 'IT & Software (Europe Only)',
+    industry: 'Industrial Cloud Platforms & Manufacturing Execution (Europe)',
+    experienceLevel: 'Mid-Level (3-7 yrs)',
+    qualificationLevel: 'Bachelor of Engineering (B.E./B.Tech)',
+    responsibilities: [
+      'Architect, provision, and maintain high-availability Kubernetes clusters across AWS and Microsoft Azure.',
+      'Implement automated CI/CD pipelines (GitLab CI, GitHub Actions) and Infrastructure-as-Code (Terraform, Ansible).',
+      'Ensure strict compliance with European GDPR data sovereignty, ISO 27001, and industrial cybersecurity standards (IEC 62443).',
+      'Monitor distributed industrial telemetry systems using Prometheus, Grafana, and Datadog.'
+    ],
+    skills: ['Kubernetes (EKS/AKS)', 'Terraform', 'Docker', 'AWS / Azure', 'CI/CD Pipelines', 'Linux Kernel', 'IEC 62443 / GDPR Compliance'],
+    qualifications: ['B.Tech in Computer Science / Information Technology / Software Engineering', 'AWS / Azure Certified Solutions Architect or CKA certification preferred', 'EU Blue Card eligible'],
+    relatedRoles: ['Site Reliability Engineer (SRE)', 'Platform Engineer', 'Systems Architect'],
+    activeSourcing: true,
+    statusNote: 'Active recruitment channel strictly for European technology and industrial cloud operations.',
+    regionRestriction: 'European Union Only (Germany, Netherlands, Poland, France)'
+  },
+  {
+    id: 'it-mes-fullstack-eu',
+    title: 'Industrial Full-Stack & MES Software Engineer',
+    category: 'IT & Software (Europe Only)',
+    industry: 'Smart Factory & Manufacturing Execution Systems (Europe)',
+    experienceLevel: 'Mid-Level (3-7 yrs)',
+    qualificationLevel: 'Bachelor of Engineering (B.E./B.Tech)',
+    responsibilities: [
+      'Develop and customize Manufacturing Execution Systems (MES) and shop-floor data collection interfaces.',
+      'Bridge OT (Operational Technology) and IT using OPC UA, MQTT, and RESTful APIs connecting to Siemens/Rockwell PLCs.',
+      'Build performant web dashboards and microservices using Python, C#, Java/Spring Boot, and React/TypeScript.',
+      'Optimize SQL/NoSQL databases handling continuous high-frequency time-series sensor data.'
+    ],
+    skills: ['Python', 'C# / .NET Core', 'React / TypeScript', 'OPC UA / MQTT', 'Industrial MES Integration', 'PostgreSQL / InfluxDB', 'REST APIs'],
+    qualifications: ['B.Tech in Computer Science / Mechatronics / Instrumentation', 'Minimum 4 years verifiable industrial software experience', 'EU Blue Card eligible'],
+    relatedRoles: ['MES Specialist', 'SCADA Integration Engineer', 'Full-Stack Developer'],
+    activeSourcing: true,
+    statusNote: 'Sourced for European Industry 4.0 smart factory deployments.',
+    regionRestriction: 'European Union Only (Germany, Poland, Austria, Czech Republic)'
+  },
+  {
+    id: 'it-robotics-mechatronics-eu',
+    title: 'Robotics Software & Motion Control Engineer',
+    category: 'IT & Software (Europe Only)',
+    industry: 'Industrial Robotics & Logistics Automation (Europe)',
+    experienceLevel: 'Mid-Level (3-7 yrs)',
+    qualificationLevel: 'Bachelor of Engineering (B.E./B.Tech)',
+    responsibilities: [
+      'Program and optimize trajectory planning and motion control algorithms for autonomous mobile robots (AMRs) and robotic arms.',
+      'Develop robot middleware nodes utilizing ROS / ROS 2 (Robot Operating System) in C++ and Python.',
+      'Integrate 2D/3D LiDAR, SLAM algorithms, and depth cameras for obstacle avoidance and indoor localization.',
+      'Collaborate on-site with European automation engineers during factory cell commissioning.'
+    ],
+    skills: ['ROS / ROS 2', 'Modern C++ (17/20)', 'Python', 'SLAM / Path Planning', 'LiDAR / Depth Cameras', 'Kinematics & Dynamics', 'Linux'],
+    qualifications: ['B.Tech / M.Tech in Robotics, Mechatronics, or Computer Engineering', 'Demonstrated code portfolio on GitHub or research publications', 'EU Blue Card eligible'],
+    relatedRoles: ['Autonomous Systems Engineer', 'Control Systems Engineer', 'Mechatronics Engineer'],
+    activeSourcing: true,
+    statusNote: 'Recruited for European logistics automation and manufacturing robotic cells.',
+    regionRestriction: 'European Union Only (Germany, Netherlands, Poland)'
+  },
+
   // Engineering
   {
     id: 'mech-eng',

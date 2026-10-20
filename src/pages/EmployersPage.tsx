@@ -60,6 +60,22 @@ export const EmployersPage: React.FC = () => {
       scope: 'Technical Assessment Coordination',
       description: 'Assisting international hiring teams with initial skills verification, documentation audits, trade testing logistics, and candidate readiness briefings.',
       suitableFor: 'International recruitment departments seeking dedicated on-the-ground support in India.'
+    },
+    {
+      id: 'it-software-europe',
+      code: 'SOL-06',
+      title: 'European IT & Software Engineering',
+      scope: 'EU Blue Card Fast-Track Only',
+      description: 'Sourcing senior embedded software (AUTOSAR, CAN/LIN), industrial cloud/DevOps, smart factory MES, and robotics engineers exclusively for European industrial deployments.',
+      suitableFor: 'German, Polish, and Central European automotive OEMs, Tier-1 suppliers, and robotics automation plants.'
+    },
+    {
+      id: 'japan-bridge',
+      code: 'SOL-07',
+      title: 'Japan Bridge Co-Creation Pilots',
+      scope: 'Bilingual Technical Pathway',
+      description: 'Structured 4-stage recruitment pilot for Japanese mobility, precision tooling, and transport manufacturers in Hamamatsu, Shizuoka and industrial prefectures, with shared responsibility model.',
+      suitableFor: 'Japanese manufacturing enterprises (自動車・工作機械・輸送機器) seeking vetted bilingual Indian engineers.'
     }
   ];
 
