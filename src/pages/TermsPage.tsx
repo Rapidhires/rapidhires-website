@@ -2,15 +2,15 @@ import React from 'react';
 
 export const TermsPage: React.FC = () => {
   return (
-    <div className="bg-warmwhite min-h-screen py-14 lg:py-20">
+    <div className="bg-vellum-100 min-h-screen py-14 lg:py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white p-8 sm:p-12 border border-steel-DEFAULT space-y-8">
+        <div className="bg-white p-8 sm:p-12 border border-steel-300 space-y-8 shadow-sm">
           
-          <div className="border-b border-steel-DEFAULT pb-6">
-            <div className="text-xs font-mono uppercase tracking-wider text-industrial-orange font-bold mb-1">
-              Legal Framework & Service Terms
+          <div className="border-b border-steel-300 pb-6">
+            <div className="text-[11px] font-mono uppercase tracking-eyebrow text-vermilion font-bold mb-1">
+              [LEGAL FRAMEWORK & JURISDICTION]
             </div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-navy-DEFAULT">
+            <h1 className="text-2xl sm:text-3xl font-bold text-castiron-DEFAULT tracking-tight">
               Terms of Use
             </h1>
             <p className="text-xs font-mono text-graphite-500 mt-2">
@@ -18,9 +18,9 @@ export const TermsPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="space-y-6 text-xs text-graphite-700 leading-relaxed">
+          <div className="space-y-6 text-xs text-graphite-700 leading-relaxed font-sans">
             <section className="space-y-2">
-              <h2 className="text-sm font-bold text-navy-DEFAULT uppercase font-mono tracking-wider">
+              <h2 className="text-sm font-bold text-castiron-DEFAULT uppercase font-mono tracking-wider">
                 1. Acceptance of Terms
               </h2>
               <p>
@@ -29,7 +29,7 @@ export const TermsPage: React.FC = () => {
             </section>
 
             <section className="space-y-2">
-              <h2 className="text-sm font-bold text-navy-DEFAULT uppercase font-mono tracking-wider">
+              <h2 className="text-sm font-bold text-castiron-DEFAULT uppercase font-mono tracking-wider">
                 2. Nature of Services & Disclaimers
               </h2>
               <p>
@@ -43,16 +43,16 @@ export const TermsPage: React.FC = () => {
             </section>
 
             <section className="space-y-2">
-              <h2 className="text-sm font-bold text-navy-DEFAULT uppercase font-mono tracking-wider">
+              <h2 className="text-sm font-bold text-castiron-DEFAULT uppercase font-mono tracking-wider">
                 3. Prohibition of Unethical Fees
               </h2>
               <p>
-                Rapidhire strictly prohibits any employee, associate, or agent from soliciting money, deposits, or gifts from job applicants. Any candidate approached by individuals claiming to represent Rapidhire demanding payments should immediately notify <a href="mailto:compliance@rapidhire.work" className="text-industrial-orange underline font-mono">compliance@rapidhire.work</a>.
+                Rapidhire strictly prohibits any employee, associate, or agent from soliciting money, deposits, or gifts from job applicants. Any candidate approached by individuals claiming to represent Rapidhire demanding payments should immediately notify <a href="mailto:compliance@rapidhire.work" className="text-vermilion underline font-mono">compliance@rapidhire.work</a>.
               </p>
             </section>
 
             <section className="space-y-2">
-              <h2 className="text-sm font-bold text-navy-DEFAULT uppercase font-mono tracking-wider">
+              <h2 className="text-sm font-bold text-castiron-DEFAULT uppercase font-mono tracking-wider">
                 4. Intellectual Property
               </h2>
               <p>
@@ -61,7 +61,7 @@ export const TermsPage: React.FC = () => {
             </section>
 
             <section className="space-y-2">
-              <h2 className="text-sm font-bold text-navy-DEFAULT uppercase font-mono tracking-wider">
+              <h2 className="text-sm font-bold text-castiron-DEFAULT uppercase font-mono tracking-wider">
                 5. Governing Law & Jurisdiction
               </h2>
               <p>

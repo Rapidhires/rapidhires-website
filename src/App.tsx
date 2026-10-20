@@ -41,7 +41,7 @@ export const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-warmwhite selection:bg-industrial-orange selection:text-white">
+      <div className="flex flex-col min-h-screen bg-vellum-100 selection:bg-vermilion selection:text-white">
         
         {/* Persistent Industrial Header */}
         <Header

@@ -1,18 +1,18 @@
 import React from 'react';
-import { ShieldCheck, CheckCircle2, Lock, UserCheck, AlertCircle } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const CandidateConsentPage: React.FC = () => {
   return (
-    <div className="bg-warmwhite min-h-screen py-14 lg:py-20">
+    <div className="bg-vellum-100 min-h-screen py-14 lg:py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white p-8 sm:p-12 border border-steel-DEFAULT space-y-8">
+        <div className="bg-white p-8 sm:p-12 border border-steel-300 space-y-8 shadow-sm">
           
-          <div className="border-b border-steel-DEFAULT pb-6">
-            <div className="text-xs font-mono uppercase tracking-wider text-industrial-orange font-bold mb-1">
-              Candidate Rights & Consent Charter
+          <div className="border-b border-steel-300 pb-6">
+            <div className="text-[11px] font-mono uppercase tracking-eyebrow text-vermilion font-bold mb-1">
+              [CANDIDATE RIGHTS & CONSENT CHARTER]
             </div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-navy-DEFAULT">
+            <h1 className="text-2xl sm:text-3xl font-bold text-castiron-DEFAULT tracking-tight">
               Candidate Data & Consent Framework
             </h1>
             <p className="text-xs font-mono text-graphite-500 mt-2">
@@ -20,17 +20,17 @@ export const CandidateConsentPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="space-y-6 text-xs text-graphite-700 leading-relaxed">
+          <div className="space-y-6 text-xs text-graphite-700 leading-relaxed font-sans">
             
-            <div className="p-4 bg-steel-100 border border-steel-DEFAULT text-navy-DEFAULT flex items-start gap-3">
-              <ShieldCheck className="w-5 h-5 text-industrial-orange shrink-0 mt-0.5" />
+            <div className="p-4 bg-vellum-100 border border-steel-300 text-castiron-DEFAULT flex items-start gap-3">
+              <ShieldCheck className="w-5 h-5 text-vermilion shrink-0 mt-0.5" />
               <div>
-                <strong>Core Commitment:</strong> When you register with Rapidhire, you maintain full ownership of your professional identity. We do not sell resumes, we do not expose your contact details on public boards, and we never share your profile with a client without discussing the role with you first.
+                <strong className="font-mono uppercase tracking-wider text-[11px] block mb-1">Core Commitment:</strong> When you register with Rapidhire, you maintain full ownership of your professional identity. We do not sell resumes, we do not expose your contact details on public boards, and we never share your profile with a client without discussing the role with you first.
               </div>
             </div>
 
             <section className="space-y-2">
-              <h2 className="text-sm font-bold text-navy-DEFAULT uppercase font-mono tracking-wider">
+              <h2 className="text-sm font-bold text-castiron-DEFAULT uppercase font-mono tracking-wider">
                 1. What Your Consent Covers
               </h2>
               <p>
@@ -45,7 +45,7 @@ export const CandidateConsentPage: React.FC = () => {
             </section>
 
             <section className="space-y-2">
-              <h2 className="text-sm font-bold text-navy-DEFAULT uppercase font-mono tracking-wider">
+              <h2 className="text-sm font-bold text-castiron-DEFAULT uppercase font-mono tracking-wider">
                 2. What Your Consent Does NOT Allow
               </h2>
               <p>
@@ -60,7 +60,7 @@ export const CandidateConsentPage: React.FC = () => {
             </section>
 
             <section className="space-y-2">
-              <h2 className="text-sm font-bold text-navy-DEFAULT uppercase font-mono tracking-wider">
+              <h2 className="text-sm font-bold text-castiron-DEFAULT uppercase font-mono tracking-wider">
                 3. Talent Pool Retention & Renewal
               </h2>
               <p>
@@ -69,29 +69,29 @@ export const CandidateConsentPage: React.FC = () => {
             </section>
 
             <section className="space-y-2">
-              <h2 className="text-sm font-bold text-navy-DEFAULT uppercase font-mono tracking-wider">
+              <h2 className="text-sm font-bold text-castiron-DEFAULT uppercase font-mono tracking-wider">
                 4. How to Revoke Consent or Request Profile Deletion
               </h2>
               <p>
                 You retain the continuous right to be forgotten. If you have secured employment elsewhere or no longer wish to be considered for industrial roles:
               </p>
-              <div className="p-3 bg-warmwhite border border-steel-DEFAULT font-mono text-graphite-700">
+              <div className="p-3 bg-vellum-100 border border-steel-300 font-mono text-graphite-700 text-xs">
                 Send an email with your full name and registered phone number to:<br />
-                <strong className="text-navy-DEFAULT">candidates@rapidhire.work</strong> with the subject line <code>"Profile Deletion Request"</code>.<br />
+                <strong className="text-castiron-DEFAULT">candidates@rapidhire.work</strong> with the subject line <code>"Profile Deletion Request"</code>.<br />
                 Your records will be permanently purged within 7 business days.
               </div>
             </section>
 
-            <div className="pt-6 border-t border-steel-DEFAULT flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="pt-6 border-t border-steel-300 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono">
               <Link
                 to="/opportunities"
-                className="text-xs font-semibold px-4 py-2 bg-navy-DEFAULT text-white hover:bg-navy-800 transition-colors"
+                className="text-xs font-semibold uppercase tracking-wider px-4 py-2 bg-castiron-DEFAULT text-white hover:bg-castiron-800 transition-colors"
               >
                 Return to Opportunities Page
               </Link>
               <a
                 href="mailto:candidates@rapidhire.work"
-                className="text-xs font-mono text-industrial-orange hover:underline font-semibold"
+                className="text-xs font-mono text-vermilion hover:underline font-semibold"
               >
                 Contact Candidate Desk &rarr;
               </a>

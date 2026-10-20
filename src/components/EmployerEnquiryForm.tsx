@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { submitEmployerEnquiry, EmployerEnquiry } from '../lib/storage';
-import { CheckCircle2, AlertCircle, UploadCloud, FileText, X, ArrowRight, ShieldCheck, Mail } from 'lucide-react';
+import { submitEmployerEnquiry } from '../lib/storage';
+import { CheckCircle2, UploadCloud, FileText, X, ArrowRight, Mail } from 'lucide-react';
 
 interface EmployerEnquiryFormProps {
   initialOccupation?: string;
@@ -61,7 +61,7 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       if (file.size > 5 * 1024 * 1024) {
-        setFileError('File size exceeds the 5MB limit. Please provide a lighter document.');
+        setFileError('File size exceeds the 5MB limit.');
         setSelectedFile(null);
         return;
       }
@@ -106,55 +106,58 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
 
   if (submissionResult?.success) {
     return (
-      <div className="bg-white p-8 border border-steel-DEFAULT shadow-sm text-center">
-        <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-emerald-200">
-          <CheckCircle2 className="w-8 h-8" />
+      <div className="bg-white p-8 border border-steel-300 text-center">
+        <div className="w-12 h-12 bg-castiron-DEFAULT text-vermilion flex items-center justify-center mx-auto mb-4 border border-castiron-900">
+          <CheckCircle2 className="w-7 h-7" />
         </div>
-        <h3 className="text-xl font-bold text-navy-DEFAULT font-mono uppercase mb-2">
+        <div className="text-[11px] font-mono text-vermilion uppercase tracking-widest font-bold mb-1">
+          [TRANSMISSION CONFIRMED]
+        </div>
+        <h3 className="text-xl font-bold text-castiron-DEFAULT font-mono uppercase mb-2">
           Workforce Requirement Recorded
         </h3>
-        <p className="text-xs font-mono text-industrial-orange font-semibold mb-4">
-          Reference Code: {submissionResult.id}
+        <p className="text-xs font-mono text-steel-600 mb-4">
+          REFERENCE DOSSIER ID: <span className="text-vermilion font-bold">{submissionResult.id}</span>
         </p>
-        <p className="text-sm text-graphite-700 max-w-lg mx-auto mb-6 leading-relaxed">
+        <p className="text-xs text-graphite-600 max-w-lg mx-auto mb-6 leading-relaxed font-sans">
           {submissionResult.message}
         </p>
 
-        <div className="bg-warmwhite p-4 border border-steel-DEFAULT text-left text-xs text-graphite-600 mb-6 space-y-1.5 font-mono">
-          <div className="flex justify-between">
-            <span className="text-graphite-500">Company:</span>
-            <span className="font-semibold text-navy-DEFAULT">{formData.companyName}</span>
+        <div className="bg-vellum-100 p-4 border border-steel-300 text-left text-xs text-graphite-700 mb-6 space-y-1.5 font-mono">
+          <div className="flex justify-between border-b border-steel-200 pb-1">
+            <span className="text-graphite-500">Corporate Entity:</span>
+            <span className="font-semibold text-castiron-DEFAULT">{formData.companyName}</span>
           </div>
-          <div className="flex justify-between">
-            <span className="text-graphite-500">Contact:</span>
-            <span className="font-semibold text-navy-DEFAULT">{formData.fullName} ({formData.businessEmail})</span>
+          <div className="flex justify-between border-b border-steel-200 pb-1">
+            <span className="text-graphite-500">Intake Contact:</span>
+            <span className="font-semibold text-castiron-DEFAULT">{formData.fullName} ({formData.businessEmail})</span>
           </div>
-          <div className="flex justify-between">
-            <span className="text-graphite-500">Occupations:</span>
-            <span className="font-semibold text-navy-DEFAULT">{formData.occupationsRequired}</span>
+          <div className="flex justify-between border-b border-steel-200 pb-1">
+            <span className="text-graphite-500">Occupations Specified:</span>
+            <span className="font-semibold text-castiron-DEFAULT">{formData.occupationsRequired}</span>
           </div>
-          <div className="flex justify-between">
-            <span className="text-graphite-500">Hiring Volume:</span>
-            <span className="font-semibold text-navy-DEFAULT">{formData.numberOfPeople}</span>
+          <div className="flex justify-between border-b border-steel-200 pb-1">
+            <span className="text-graphite-500">Target Volume:</span>
+            <span className="font-semibold text-castiron-DEFAULT">{formData.numberOfPeople}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-graphite-500">Deployment Location:</span>
-            <span className="font-semibold text-navy-DEFAULT">{formData.workLocation || formData.employerCountry}</span>
+            <span className="font-semibold text-castiron-DEFAULT">{formData.workLocation || formData.employerCountry}</span>
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 font-mono">
           <button
             onClick={() => setSubmissionResult(null)}
-            className="w-full sm:w-auto text-xs font-semibold px-4 py-2.5 bg-navy-DEFAULT text-white hover:bg-navy-800 transition-colors"
+            className="w-full sm:w-auto text-xs font-semibold uppercase tracking-wider px-4 py-2.5 bg-castiron-DEFAULT text-white hover:bg-castiron-800 transition-colors"
           >
             Submit Another Requirement
           </button>
           <a
             href="mailto:enquiries@rapidhire.work"
-            className="w-full sm:w-auto text-xs font-semibold px-4 py-2.5 border border-steel-DEFAULT text-navy-DEFAULT hover:bg-warmwhite transition-colors inline-flex items-center justify-center gap-1.5"
+            className="w-full sm:w-auto text-xs font-semibold uppercase tracking-wider px-4 py-2.5 border border-steel-300 text-castiron-DEFAULT hover:bg-vellum-100 transition-colors inline-flex items-center justify-center gap-1.5"
           >
-            <Mail className="w-3.5 h-3.5 text-industrial-orange" />
+            <Mail className="w-3.5 h-3.5 text-vermilion" />
             <span>Email Recruitment Desk</span>
           </a>
         </div>
@@ -163,17 +166,17 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 border border-steel-DEFAULT text-graphite">
-      <div className="border-b border-steel-200 pb-4 mb-6">
-        <div className="flex items-center gap-2 text-xs font-mono text-industrial-orange font-bold uppercase tracking-wider mb-1">
-          <span className="w-2 h-2 bg-industrial-orange"></span>
-          Employer Requirement Intake
+    <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 border border-steel-300 text-castiron-DEFAULT shadow-sm">
+      <div className="border-b border-steel-300 pb-4 mb-6">
+        <div className="flex items-center gap-2 text-[11px] font-mono text-vermilion font-bold uppercase tracking-wider mb-1">
+          <span className="w-1.5 h-1.5 bg-vermilion"></span>
+          [SPECIFICATION INTAKE FORM]
         </div>
-        <h3 className="text-xl font-bold text-navy-DEFAULT">
+        <h3 className="text-xl font-bold text-castiron-DEFAULT tracking-tight">
           Define Your Workforce Requirement
         </h3>
-        <p className="text-xs text-graphite-500 mt-1">
-          Share your technical requirements and location. Our recruitment desk will conduct an initial feasibility review.
+        <p className="text-xs text-graphite-500 mt-1 font-sans">
+          Share your technical requirements and plant location. Our international recruitment desk will conduct an immediate feasibility review.
         </p>
       </div>
 
@@ -181,8 +184,8 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
         {/* Row 1: Name and Job Title */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-              Your Full Name <span className="text-industrial-orange">*</span>
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+              Your Full Name <span className="text-vermilion">*</span>
             </label>
             <input
               type="text"
@@ -190,13 +193,13 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
               required
               value={formData.fullName}
               onChange={handleInputChange}
-              placeholder="e.g. Marcus Vance"
-              className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white focus:border-navy-DEFAULT"
+              placeholder="e.g. Klaus Weber / Marcus Vance"
+              className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-              Your Job Title <span className="text-industrial-orange">*</span>
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+              Your Job Title <span className="text-vermilion">*</span>
             </label>
             <input
               type="text"
@@ -204,8 +207,8 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
               required
               value={formData.jobTitle}
               onChange={handleInputChange}
-              placeholder="e.g. Plant Manager / Head of HR"
-              className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white focus:border-navy-DEFAULT"
+              placeholder="e.g. Plant Manager / Head of Technical Talent"
+              className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
             />
           </div>
         </div>
@@ -213,8 +216,8 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
         {/* Row 2: Company Name and Website */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-              Company Name <span className="text-industrial-orange">*</span>
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+              Company Name <span className="text-vermilion">*</span>
             </label>
             <input
               type="text"
@@ -222,12 +225,12 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
               required
               value={formData.companyName}
               onChange={handleInputChange}
-              placeholder="e.g. Al-Bahar Industrial Engineering"
-              className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white focus:border-navy-DEFAULT"
+              placeholder="e.g. Precision Engineering GmbH"
+              className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
               Company Website <span className="text-graphite-400 font-normal">(Optional)</span>
             </label>
             <input
@@ -236,7 +239,7 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
               value={formData.companyWebsite}
               onChange={handleInputChange}
               placeholder="https://example.com"
-              className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white focus:border-navy-DEFAULT"
+              className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
             />
           </div>
         </div>
@@ -244,8 +247,8 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
         {/* Row 3: Business Email & Phone */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-              Corporate / Business Email <span className="text-industrial-orange">*</span>
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+              Corporate / Business Email <span className="text-vermilion">*</span>
             </label>
             <input
               type="email"
@@ -254,12 +257,12 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
               value={formData.businessEmail}
               onChange={handleInputChange}
               placeholder="name@company.com"
-              className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white focus:border-navy-DEFAULT"
+              className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-              Phone Number with Country Code <span className="text-industrial-orange">*</span>
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+              Phone Number with Country Code <span className="text-vermilion">*</span>
             </label>
             <div className="flex">
               <input
@@ -267,7 +270,7 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
                 name="phoneCountryCode"
                 value={formData.phoneCountryCode}
                 onChange={handleInputChange}
-                className="w-20 text-sm px-2 py-2 border border-r-0 border-steel-DEFAULT bg-steel-100 font-mono text-center"
+                className="w-20 text-xs px-2 py-2 border border-r-0 border-steel-300 bg-steel-100 font-mono text-center"
               />
               <input
                 type="tel"
@@ -276,7 +279,7 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
                 value={formData.phoneNumber}
                 onChange={handleInputChange}
                 placeholder="50 123 4567"
-                className="flex-1 text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white"
+                className="flex-1 text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
               />
             </div>
           </div>
@@ -285,39 +288,38 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
         {/* Row 4: Country and Industry */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-              Employer's Operating Country <span className="text-industrial-orange">*</span>
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+              Employer Operating Country <span className="text-vermilion">*</span>
             </label>
             <select
               name="employerCountry"
               value={formData.employerCountry}
               onChange={handleInputChange}
-              className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white"
+              className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
             >
               <option value="United Arab Emirates">United Arab Emirates</option>
               <option value="Saudi Arabia">Saudi Arabia</option>
-              <option value="Qatar">Qatar</option>
-              <option value="Kuwait">Kuwait</option>
-              <option value="Oman">Oman</option>
               <option value="Germany">Germany</option>
               <option value="Poland">Poland</option>
               <option value="Czech Republic">Czech Republic</option>
               <option value="Japan">Japan</option>
               <option value="Singapore">Singapore</option>
+              <option value="Qatar">Qatar</option>
+              <option value="Kuwait">Kuwait</option>
               <option value="United Kingdom">United Kingdom</option>
               <option value="India (Domestic Project)">India (Domestic Project)</option>
               <option value="Other International Jurisdiction">Other International Jurisdiction</option>
             </select>
           </div>
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-              Industry Sector <span className="text-industrial-orange">*</span>
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+              Industry Sector <span className="text-vermilion">*</span>
             </label>
             <select
               name="industry"
               value={formData.industry}
               onChange={handleInputChange}
-              className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white"
+              className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
             >
               <option value="Industrial Manufacturing">Industrial Manufacturing</option>
               <option value="Automotive & Transport Equipment">Automotive & Transport Equipment</option>
@@ -325,7 +327,7 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
               <option value="Electrical & Electronics">Electrical & Electronics</option>
               <option value="Energy & Industrial Maintenance">Energy & Industrial Maintenance</option>
               <option value="Construction & Project Workforce">Construction & Project Workforce</option>
-              <option value="Railway & Transport Systems">Railway & Transport Systems (Area of interest)</option>
+              <option value="Railway & Transport Systems">Railway & Transport Systems (Prospective)</option>
               <option value="Other Heavy Industry">Other Heavy Industry</option>
             </select>
           </div>
@@ -334,8 +336,8 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
         {/* Row 5: Occupations Required & Number of People */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-              Occupations Required <span className="text-industrial-orange">*</span>
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+              Occupations Required <span className="text-vermilion">*</span>
             </label>
             <input
               type="text"
@@ -343,19 +345,19 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
               required
               value={formData.occupationsRequired}
               onChange={handleInputChange}
-              placeholder="e.g. 6G Welders, CNC Machinists, Mechanical Engineers"
-              className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white focus:border-navy-DEFAULT"
+              placeholder="e.g. CNC 5-Axis Operators, 6G Welders, Mechanical Engineers"
+              className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-              Number of People Required <span className="text-industrial-orange">*</span>
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+              Workforce Volume Required <span className="text-vermilion">*</span>
             </label>
             <select
               name="numberOfPeople"
               value={formData.numberOfPeople}
               onChange={handleInputChange}
-              className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white"
+              className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white font-mono"
             >
               <option value="1-2 Key Technical Hires">1-2 Key Technical Hires</option>
               <option value="3-5 Specialized Trades">3-5 Specialized Trades</option>
@@ -369,14 +371,14 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
         {/* Row 6: Employment Type & Target Start Date */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-              Employment Type <span className="text-industrial-orange">*</span>
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+              Employment Type <span className="text-vermilion">*</span>
             </label>
             <select
               name="employmentType"
               value={formData.employmentType}
               onChange={handleInputChange}
-              className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white"
+              className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
             >
               <option value="Full-time Permanent">Full-time Permanent</option>
               <option value="Fixed-Term Project Contract (1-2 Years)">Fixed-Term Project Contract (1-2 Years)</option>
@@ -385,14 +387,14 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
             </select>
           </div>
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-              Target Start / Deployment Date <span className="text-industrial-orange">*</span>
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+              Target Start / Deployment Schedule <span className="text-vermilion">*</span>
             </label>
             <select
               name="targetStartDate"
               value={formData.targetStartDate}
               onChange={handleInputChange}
-              className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white"
+              className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
             >
               <option value="Immediate (Within 30 Days)">Immediate (Within 30 Days)</option>
               <option value="Within 30-60 Days">Within 30-60 Days</option>
@@ -404,8 +406,8 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
 
         {/* Row 7: Work Location */}
         <div>
-          <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-            Specific Work Location / Plant Site <span className="text-industrial-orange">*</span>
+          <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+            Plant Site / Deployment City <span className="text-vermilion">*</span>
           </label>
           <input
             type="text"
@@ -413,15 +415,15 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
             required
             value={formData.workLocation}
             onChange={handleInputChange}
-            placeholder="e.g. Jubail Industrial Area 2, Saudi Arabia or Stuttgart Facility, Germany"
-            className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white"
+            placeholder="e.g. Jubail Industrial Zone 2, Saudi Arabia or Stuttgart Plant, Germany"
+            className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
           />
         </div>
 
         {/* Row 8: Technical & Qualification Requirements */}
         <div>
-          <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-            Technical & Qualification Requirements <span className="text-industrial-orange">*</span>
+          <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+            Technical & Qualification Specifications <span className="text-vermilion">*</span>
           </label>
           <textarea
             name="technicalRequirements"
@@ -429,15 +431,15 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
             required
             value={formData.technicalRequirements}
             onChange={handleInputChange}
-            placeholder="Specify required machine controls (e.g. Fanuc, Siemens), trade certifications (e.g. ASME 6G, AWS), minimum years of experience, or equipment knowledge."
-            className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white"
+            placeholder="Specify required machine controls (Fanuc, Siemens, Heidenhain), trade certifications (ASME 6G, AWS, ISO), min years of experience, or tooling knowledge."
+            className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white font-mono"
           />
         </div>
 
-        {/* Row 9: Language Requirements & Additional Message */}
+        {/* Row 9: Language Requirements & JD Upload */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
               Language Requirements <span className="text-graphite-400 font-normal">(Optional)</span>
             </label>
             <input
@@ -445,18 +447,18 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
               name="languageRequirements"
               value={formData.languageRequirements}
               onChange={handleInputChange}
-              placeholder="e.g. Conversational English, Basic German"
-              className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white"
+              placeholder="e.g. Technical English (B2), Basic German"
+              className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
-              Job Description / Spec Sheet <span className="text-graphite-400 font-normal">(Optional, max 5MB)</span>
+            <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
+              Job Description / Spec Sheet <span className="text-graphite-400 font-normal">(PDF / Word max 5MB)</span>
             </label>
             {!selectedFile ? (
-              <label className="border border-dashed border-steel-400 p-2.5 flex items-center justify-center gap-2 cursor-pointer bg-warmwhite-50 hover:bg-white text-xs text-graphite-600">
-                <UploadCloud className="w-4 h-4 text-industrial-orange" />
-                <span>Upload JD (PDF / Word)</span>
+              <label className="border border-dashed border-steel-400 p-2.5 flex items-center justify-center gap-2 cursor-pointer bg-vellum-50 hover:bg-white text-xs text-graphite-600 font-mono">
+                <UploadCloud className="w-4 h-4 text-vermilion" />
+                <span>Upload Specification (PDF / Word)</span>
                 <input
                   type="file"
                   onChange={handleFileChange}
@@ -465,9 +467,9 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
                 />
               </label>
             ) : (
-              <div className="flex items-center justify-between p-2 border border-steel-DEFAULT bg-steel-100 text-xs">
+              <div className="flex items-center justify-between p-2 border border-steel-300 bg-steel-100 text-xs font-mono">
                 <div className="flex items-center gap-1.5 truncate">
-                  <FileText className="w-4 h-4 text-industrial-orange shrink-0" />
+                  <FileText className="w-4 h-4 text-vermilion shrink-0" />
                   <span className="truncate">{selectedFile.name}</span>
                 </div>
                 <button
@@ -479,13 +481,13 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
                 </button>
               </div>
             )}
-            {fileError && <p className="text-[11px] text-red-600 mt-1">{fileError}</p>}
+            {fileError && <p className="text-[11px] font-mono text-red-600 mt-1">{fileError}</p>}
           </div>
         </div>
 
-        {/* Row 10: General Message */}
+        {/* Row 10: Additional Scope */}
         <div>
-          <label className="block text-xs font-semibold text-navy-DEFAULT uppercase tracking-wider mb-1">
+          <label className="block text-[11px] font-mono font-semibold text-castiron-DEFAULT uppercase tracking-wider mb-1">
             Additional Scope or Operational Context <span className="text-graphite-400 font-normal">(Optional)</span>
           </label>
           <textarea
@@ -493,37 +495,37 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
             rows={2}
             value={formData.message}
             onChange={handleInputChange}
-            placeholder="Any specific project timelines, shift patterns, or commercial preferences..."
-            className="w-full text-sm px-3 py-2 border border-steel-DEFAULT bg-warmwhite-50 focus:bg-white"
+            placeholder="Any shift schedules, tooling standards, or project milestone details..."
+            className="w-full text-xs px-3 py-2 border border-steel-300 bg-vellum-50 focus:bg-white font-mono"
           />
         </div>
 
         {/* Privacy & Compliance Acknowledgement */}
-        <div className="pt-2 border-t border-steel-200">
-          <label className="flex items-start gap-2.5 cursor-pointer text-xs text-graphite-600">
+        <div className="pt-3 border-t border-steel-300">
+          <label className="flex items-start gap-2.5 cursor-pointer text-xs text-graphite-600 font-sans">
             <input
               type="checkbox"
               name="privacyAcknowledged"
               checked={formData.privacyAcknowledged}
               onChange={handleInputChange}
               required
-              className="mt-0.5 text-industrial-orange rounded-none focus:ring-industrial-orange"
+              className="mt-0.5 text-vermilion focus:ring-vermilion"
             />
             <span>
-              I confirm that this enquiry represents a legitimate corporate or project workforce requirement. I agree to Rapidhire processing this information to assess sourcing feasibility and contact me regarding workforce options. Rapidhire adheres to strict confidentiality standards.
+              I confirm that this enquiry represents a legitimate corporate or project workforce requirement. I agree to Rapidhire processing this information to assess sourcing feasibility. Rapidhire adheres to strict client confidentiality.
             </span>
           </label>
         </div>
 
-        {/* Action Button */}
+        {/* Action Trigger */}
         <div>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-industrial-orange hover:bg-industrial-orange-hover text-white text-sm font-semibold px-6 py-3 transition-colors border border-industrial-orange-dark shadow-sm disabled:opacity-50"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-vermilion hover:bg-vermilion-hover text-white text-xs font-semibold uppercase tracking-wider px-6 py-3.5 transition-colors border border-vermilion-border shadow-sm disabled:opacity-50 font-mono"
           >
             {isSubmitting ? (
-              <span>Transmitting Workforce Brief...</span>
+              <span>Transmitting Workforce Dossier...</span>
             ) : (
               <>
                 <span>Submit Workforce Requirement</span>
@@ -532,7 +534,7 @@ export const EmployerEnquiryForm: React.FC<EmployerEnquiryFormProps> = ({
             )}
           </button>
           <p className="text-[11px] text-graphite-500 mt-2 font-mono">
-            &bull; Direct recruitment desk review within 24 business hours &bull; Zero candidate placement fees charged
+            &bull; Direct recruitment desk feasibility review within 24 business hours &bull; Strict zero candidate fee policy
           </p>
         </div>
       </div>

@@ -1,16 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { 
   CheckCircle2, 
-  XCircle, 
   ShieldCheck, 
   ArrowRight, 
-  UserCheck, 
-  Compass, 
-  AlertTriangle, 
   Lock, 
   Headphones,
-  HelpCircle
+  Check
 } from 'lucide-react';
 import { HorizontalProcess } from '../components/IndustrialProcessDiagram';
 
@@ -53,20 +48,21 @@ export const ApproachPage: React.FC<ApproachPageProps> = ({ onOpenEmployerModal 
   ];
 
   return (
-    <div className="bg-warmwhite min-h-screen">
+    <div className="bg-vellum-100 min-h-screen">
       
       {/* Page Header */}
-      <section className="bg-[#172B3A] text-warmwhite py-14 lg:py-20 border-b border-[#303A42]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-[#101417] text-white py-14 lg:py-20 border-b border-[#232B32] relative overflow-hidden">
+        <div className="absolute inset-0 blueprint-grid-dark pointer-events-none opacity-40"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-navy-900 border border-navy-700 text-steel-200 text-xs font-mono uppercase tracking-eyebrow">
-              <span className="w-2 h-2 bg-industrial-orange"></span>
-              METHODOLOGY & FAIR PRACTICE CHARTER
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#171D21] border border-[#2B353D] text-steel-300 text-[11px] font-mono uppercase tracking-eyebrow">
+              <span className="w-1.5 h-1.5 bg-vermilion"></span>
+              <span>METHODOLOGY & FAIR PRACTICE CHARTER</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
               Recruiter-Led Sourcing & Fair Recruitment Practice
             </h1>
-            <p className="text-base sm:text-lg text-steel-200 leading-relaxed">
+            <p className="text-base sm:text-lg text-steel-300 leading-relaxed font-sans">
               Industrial operations cannot compromise on competence or safety. Our structured methodology pairs technology-assisted candidate identification with human recruiter judgement.
             </p>
           </div>
@@ -79,13 +75,13 @@ export const ApproachPage: React.FC<ApproachPageProps> = ({ onOpenEmployerModal 
         {/* Section 1: The 5-Stage Process Detail */}
         <section>
           <div className="max-w-3xl mb-10">
-            <span className="text-xs font-mono uppercase tracking-wider text-industrial-orange font-bold">
-              Step-by-Step Delivery
+            <span className="text-[11px] font-mono uppercase tracking-eyebrow text-vermilion font-bold">
+              [OPERATIONAL PHASES]
             </span>
-            <h2 className="text-2xl font-bold text-navy-DEFAULT mt-1 mb-2">
+            <h2 className="text-2xl font-bold text-castiron-DEFAULT mt-1 mb-2 tracking-tight">
               The 5-Stage Recruitment Sequence
             </h2>
-            <p className="text-xs sm:text-sm text-graphite-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-graphite-600 leading-relaxed font-sans">
               From the initial technical brief in the employer's home country to post-placement operational support on the factory floor.
             </p>
           </div>
@@ -94,53 +90,53 @@ export const ApproachPage: React.FC<ApproachPageProps> = ({ onOpenEmployerModal 
         </section>
 
         {/* Section 2: Why Human Judgement Matters */}
-        <section className="bg-white p-8 sm:p-10 border border-steel-DEFAULT">
+        <section className="bg-white p-8 sm:p-10 border border-steel-300 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
-              <span className="text-xs font-mono uppercase tracking-wider text-industrial-orange font-bold">
-                Recruitment Philosophy
+              <span className="text-[11px] font-mono uppercase tracking-eyebrow text-vermilion font-bold">
+                [RECRUITMENT PHILOSOPHY]
               </span>
-              <h2 className="text-2xl font-bold text-navy-DEFAULT">
+              <h2 className="text-2xl font-bold text-castiron-DEFAULT tracking-tight">
                 Why Software Alone Cannot Qualify an Industrial Workforce
               </h2>
-              <p className="text-xs sm:text-sm text-graphite-700 leading-relaxed">
+              <p className="text-xs sm:text-sm text-graphite-700 leading-relaxed font-sans">
                 An algorithm can match the acronym "CNC" or "6G" on a resume. It cannot determine whether a machinist understands Heidenhain vs Fanuc kinematic offsets, whether a welder can consistently produce radiographic-quality root passes in a restricted 6G pipe position, or whether an electrician is conversant with IEC 60364 insulation protocols.
               </p>
-              <p className="text-xs sm:text-sm text-graphite-700 leading-relaxed">
+              <p className="text-xs sm:text-sm text-graphite-700 leading-relaxed font-sans">
                 At Rapidhire, open-source technology tools automate talent pool indexing, communication scheduling, and documentation tracking, freeing our experienced technical recruiters to conduct in-depth qualitative evaluation.
               </p>
               <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono text-graphite-600">
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <Check className="w-4 h-4 text-vermilion" />
                   Trade Certificate Verification
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <Check className="w-4 h-4 text-vermilion" />
                   Machine Control Proficiency Checks
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <Check className="w-4 h-4 text-vermilion" />
                   Safety Culture Assessment
                 </span>
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-warmwhite p-6 border border-steel-DEFAULT space-y-4">
-              <h4 className="text-xs font-mono uppercase font-bold text-navy-DEFAULT tracking-wider border-b border-steel-DEFAULT pb-2">
-                Rapidhire Evaluation Matrix
+            <div className="lg:col-span-5 bg-vellum-50 p-6 border border-steel-300 space-y-4 font-mono">
+              <h4 className="text-xs uppercase font-bold text-castiron-DEFAULT tracking-wider border-b border-steel-300 pb-2">
+                [RAPIDHIRE EVALUATION MATRIX]
               </h4>
               <div className="space-y-3 text-xs">
-                <div className="bg-white p-3 border border-steel-DEFAULT">
-                  <strong className="text-navy-DEFAULT block mb-1">1. Credential Audit</strong>
-                  <span className="text-graphite-600">Verification of ITI, NCVT, Polytechnic, or B.Tech degrees with issuing institutions and previous employers.</span>
+                <div className="bg-white p-3 border border-steel-300">
+                  <strong className="text-castiron-DEFAULT block mb-1">1. Credential Audit</strong>
+                  <span className="text-graphite-600 font-sans">Verification of ITI, NCVT, Polytechnic, or B.Tech degrees with issuing institutions and previous employers.</span>
                 </div>
-                <div className="bg-white p-3 border border-steel-DEFAULT">
-                  <strong className="text-navy-DEFAULT block mb-1">2. Technical Dialogue</strong>
-                  <span className="text-graphite-600">Recruiter interviews probing hands-on machine maintenance, tooling tolerances, and blueprint reading.</span>
+                <div className="bg-white p-3 border border-steel-300">
+                  <strong className="text-castiron-DEFAULT block mb-1">2. Technical Dialogue</strong>
+                  <span className="text-graphite-600 font-sans">Recruiter interviews probing hands-on machine maintenance, tooling tolerances, and blueprint reading.</span>
                 </div>
-                <div className="bg-white p-3 border border-steel-DEFAULT">
-                  <strong className="text-navy-DEFAULT block mb-1">3. Practical Trade Testing</strong>
-                  <span className="text-graphite-600">Conducting physical trade tests at accredited Indian workshops for welders, fitters, and operators prior to client review.</span>
+                <div className="bg-white p-3 border border-steel-300">
+                  <strong className="text-castiron-DEFAULT block mb-1">3. Practical Trade Testing</strong>
+                  <span className="text-graphite-600 font-sans">Conducting physical trade tests at accredited Indian workshops for welders, fitters, and operators prior to client review.</span>
                 </div>
               </div>
             </div>
@@ -150,42 +146,42 @@ export const ApproachPage: React.FC<ApproachPageProps> = ({ onOpenEmployerModal 
         {/* Section 3: Comparative Distinction (Rapidhire vs Job Boards vs Visa Consultancies) */}
         <section>
           <div className="max-w-3xl mb-8">
-            <span className="text-xs font-mono uppercase tracking-wider text-industrial-orange font-bold">
-              Market Clarity
+            <span className="text-[11px] font-mono uppercase tracking-eyebrow text-vermilion font-bold">
+              [MARKET CLARITY]
             </span>
-            <h2 className="text-2xl font-bold text-navy-DEFAULT mt-1 mb-2">
+            <h2 className="text-2xl font-bold text-castiron-DEFAULT mt-1 mb-2 tracking-tight">
               Understanding the Distinction: Rapidhire vs Others
             </h2>
-            <p className="text-xs sm:text-sm text-graphite-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-graphite-600 leading-relaxed font-sans">
               Rapidhire is an industrial recruitment partner. We are neither an impersonal digital job board nor an immigration visa consultancy.
             </p>
           </div>
 
-          <div className="bg-white border border-steel-DEFAULT overflow-x-auto shadow-sm">
+          <div className="bg-white border border-steel-300 overflow-x-auto shadow-sm">
             <table className="w-full text-left text-xs">
-              <thead className="bg-[#172B3A] text-white font-mono uppercase tracking-wider text-[11px]">
+              <thead className="bg-[#101417] text-white font-mono uppercase tracking-wider text-[11px]">
                 <tr>
-                  <th className="py-3 px-4 border-r border-navy-700">Operating Dimension</th>
-                  <th className="py-3 px-4 border-r border-navy-700 bg-industrial-orange text-white">
+                  <th className="py-3 px-4 border-r border-[#1E252C]">Operating Dimension</th>
+                  <th className="py-3 px-4 border-r border-[#1E252C] bg-vermilion text-white font-bold">
                     Rapidhire Model
                   </th>
-                  <th className="py-3 px-4 border-r border-navy-700">Generic Job Boards</th>
+                  <th className="py-3 px-4 border-r border-[#1E252C]">Generic Job Boards</th>
                   <th className="py-3 px-4">Immigration / Visa Consultancies</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-steel-DEFAULT font-sans text-graphite-700">
+              <tbody className="divide-y divide-steel-300 font-sans text-graphite-700">
                 {comparisons.map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-warmwhite'}>
-                    <td className="py-4 px-4 font-semibold text-navy-DEFAULT border-r border-steel-DEFAULT">
+                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-vellum-50'}>
+                    <td className="py-4 px-4 font-semibold text-castiron-DEFAULT border-r border-steel-300 font-mono text-[11px]">
                       {row.dimension}
                     </td>
-                    <td className="py-4 px-4 font-medium text-navy-DEFAULT bg-industrial-orange-light/20 border-r border-steel-DEFAULT">
+                    <td className="py-4 px-4 font-medium text-castiron-DEFAULT bg-vermilion-light/20 border-r border-steel-300">
                       <div className="flex items-start gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-industrial-orange shrink-0 mt-0.5" />
+                        <Check className="w-3.5 h-3.5 text-vermilion shrink-0 mt-0.5" />
                         <span>{row.rapidhire}</span>
                       </div>
                     </td>
-                    <td className="py-4 px-4 text-graphite-500 border-r border-steel-DEFAULT">
+                    <td className="py-4 px-4 text-graphite-500 border-r border-steel-300">
                       {row.jobBoard}
                     </td>
                     <td className="py-4 px-4 text-graphite-500">
@@ -199,49 +195,49 @@ export const ApproachPage: React.FC<ApproachPageProps> = ({ onOpenEmployerModal 
         </section>
 
         {/* Section 4: Fair Recruitment Charter */}
-        <section className="bg-steel-100 p-8 sm:p-10 border border-steel-DEFAULT">
+        <section className="bg-white p-8 sm:p-10 border border-steel-300 shadow-sm">
           <div className="max-w-3xl mb-8">
-            <span className="text-xs font-mono uppercase tracking-wider text-industrial-orange font-bold">
-              Ethical Standard
+            <span className="text-[11px] font-mono uppercase tracking-eyebrow text-vermilion font-bold">
+              [ETHICAL RECRUITMENT CHARTER]
             </span>
-            <h2 className="text-2xl font-bold text-navy-DEFAULT mt-1 mb-2">
+            <h2 className="text-2xl font-bold text-castiron-DEFAULT mt-1 mb-2 tracking-tight">
               Our Fair Practice & Ethical Charter
             </h2>
-            <p className="text-xs sm:text-sm text-graphite-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-graphite-600 leading-relaxed font-sans">
               Cross-border labor recruitment has historically suffered from predatory intermediaries. Rapidhire is committed to fair, transparent, and legally compliant international staffing.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-5 border border-steel-DEFAULT">
-              <ShieldCheck className="w-6 h-6 text-industrial-orange mb-3" />
-              <h4 className="text-sm font-bold text-navy-DEFAULT mb-2">Zero Candidate Fees</h4>
-              <p className="text-xs text-graphite-600 leading-relaxed">
+            <div className="bg-vellum-50 p-5 border border-steel-300">
+              <ShieldCheck className="w-6 h-6 text-vermilion mb-3" />
+              <h4 className="text-sm font-bold text-castiron-DEFAULT mb-2">Zero Candidate Fees</h4>
+              <p className="text-xs text-graphite-600 leading-relaxed font-sans">
                 Candidates are never charged placement, interview, or processing fees. Rapidhire’s recruitment services are funded entirely by commissioning employers.
               </p>
             </div>
 
-            <div className="bg-white p-5 border border-steel-DEFAULT">
-              <Lock className="w-6 h-6 text-industrial-orange mb-3" />
-              <h4 className="text-sm font-bold text-navy-DEFAULT mb-2">Contract Transparency</h4>
-              <p className="text-xs text-graphite-600 leading-relaxed">
+            <div className="bg-vellum-50 p-5 border border-steel-300">
+              <Lock className="w-6 h-6 text-vermilion mb-3" />
+              <h4 className="text-sm font-bold text-castiron-DEFAULT mb-2">Contract Transparency</h4>
+              <p className="text-xs text-graphite-600 leading-relaxed font-sans">
                 Prior to mobilization, every worker receives written terms specifying salary, overtime rates, deductions, accommodation standards, and health coverage in a language they comprehend.
               </p>
             </div>
 
-            <div className="bg-white p-5 border border-steel-DEFAULT">
-              <Headphones className="w-6 h-6 text-industrial-orange mb-3" />
-              <h4 className="text-sm font-bold text-navy-DEFAULT mb-2">24/7 Support Channel</h4>
-              <p className="text-xs text-graphite-600 leading-relaxed">
+            <div className="bg-vellum-50 p-5 border border-steel-300">
+              <Headphones className="w-6 h-6 text-vermilion mb-3" />
+              <h4 className="text-sm font-bold text-castiron-DEFAULT mb-2">24/7 Support Channel</h4>
+              <p className="text-xs text-graphite-600 leading-relaxed font-sans">
                 A dedicated point of contact is accessible to placed workers to report irregularities, clarify site protocols, or seek assistance through agreed liaison channels.
               </p>
             </div>
           </div>
 
-          <div className="mt-8 text-center">
+          <div className="mt-8 text-center font-mono">
             <button
               onClick={onOpenEmployerModal}
-              className="inline-flex items-center gap-2 bg-navy-DEFAULT hover:bg-navy-800 text-white text-xs font-semibold px-6 py-3.5 transition-colors border border-navy-900 shadow-sm"
+              className="inline-flex items-center gap-2 bg-castiron-DEFAULT hover:bg-castiron-800 text-white text-xs font-semibold uppercase tracking-wider px-6 py-3.5 transition-colors border border-castiron-900 shadow-sm"
             >
               <span>Partner with an Ethical Recruitment Specialist</span>
               <ArrowRight className="w-4 h-4" />
